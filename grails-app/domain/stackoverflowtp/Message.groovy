@@ -1,11 +1,8 @@
 package stackoverflowtp
 
-class Message {
+class Message extends Intervention {
 
-    User    name_
-    Date    postDate_
-    String  content_
-    int     mark
+    static belongsTo = [question: Question]
 
     static constraints = {
     }

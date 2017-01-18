@@ -1,20 +1,16 @@
 package stackoverflowtp
 
-class Question  {
+class Question extends Intervention {
 
-    User               name_
-    Date               postDate_
-    String             title_
-    String             content_
+    int views
+    String titleQuestion
 
-    ArrayList<Message> answers_
-
-    int                views_
-    int                mark
-    ArrayList<Tag>     tags_
-    boolean            resolved_
+    //Many-To-Many relation, One-To-Many relation
+    static hasMany = [tags: Tag, message: Message]
 
 
     static constraints = {
+        views min: 0
+        titleQuestion nullable: false, blank: false, maxSize: 200
     }
 }
