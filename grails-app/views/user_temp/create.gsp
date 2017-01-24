@@ -1,3 +1,4 @@
+<%@ page import="mystackoverflow.Role_temp" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,7 +30,8 @@
             </g:hasErrors>
             <g:form action="save">
                 <fieldset class="form">
-                    <f:all bean="user_temp"/>
+                    <f:field bean="user_temp" property="username" />
+                    <f:field bean="user_temp" property="password" />
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
