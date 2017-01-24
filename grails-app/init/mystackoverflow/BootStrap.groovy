@@ -8,8 +8,8 @@ class BootStrap
 		def userRole = new Role_temp(authority: 'ROLE_USER').save()
 
 		// Creation des utilisateurs
-		def admin = new User_temp(username: 'me', password: 'password', role: adminRole).save()
-		def user = new User_temp(username: 'user', password: 'password', role: userRole).save()
+		def admin = new User_temp(username: 'aurelie', password: 'password', role: adminRole).save()
+		def user = new User_temp(username: 'corentin', password: 'password', role: userRole).save()
 
 		println adminRole
 		println admin
