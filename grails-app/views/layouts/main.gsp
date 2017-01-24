@@ -42,7 +42,7 @@
 						<!-- NOUVEAU MENU -->
 						<g:if test="${session.user}">
 							<!-- PROFILE MENU -->
-							<li><a href="#">${message(code: 'menu.profile')}</a></li>
+							<li><a href="${createLink(uri: '/user_temp/show')}/${session.user.id}">${message(code: 'menu.profile')}</a></li>
 
 							<!-- QUESTION MENU -->
 							<li class="dropdown">
