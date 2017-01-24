@@ -55,9 +55,9 @@ class User_tempController {
 	}
 
 	@Transactional
-	def save()//User_temp user_temp)
+	def save(User_temp user_temp)
 	{
-		def user_temp = new User_temp(username: params.username, password: params.password, role: Role_temp.findByAuthority("ROLE_USER"))
+		//def user_temp = new User_temp(username: params.username, password: params.password, role: Role_temp.findByAuthority("ROLE_USER"))
 
 		if (user_temp == null) {
             transactionStatus.setRollbackOnly()
