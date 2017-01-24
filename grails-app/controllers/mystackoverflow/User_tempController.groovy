@@ -37,7 +37,8 @@ class User_tempController {
 		redirect(uri:'/')
 	}
 
-	def show(User_temp user_temp) {
+	def show(User_temp user_temp)
+	{
 		respond user_temp
 	}
 

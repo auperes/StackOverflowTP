@@ -48,7 +48,7 @@
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${message(code: 'menu.questions')}<span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="#">Mes questions</a></li>
+									<li><a href="${createLink(uri: '/user_temp/show_questions')}/${session.user.id}">Mes questions</a></li>
 									<li><a href="${createLink(uri: '/question/create')}">Poser une question</a></li>
 									<li role="separator" class="divider"></li>
 									<li><a href="#">Dernières questions</a></li>
