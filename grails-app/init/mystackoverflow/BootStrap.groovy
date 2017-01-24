@@ -10,9 +10,6 @@ class BootStrap
 		// Creation des utilisateurs
 		def admin = new User_temp(username: 'aurelie', password: 'password', role: adminRole).save()
 		def user = new User_temp(username: 'corentin', password: 'password', role: userRole).save()
-
-		println adminRole
-		println admin
 	}
 
 	def destroy = {

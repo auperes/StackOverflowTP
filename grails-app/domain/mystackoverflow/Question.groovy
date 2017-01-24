@@ -3,13 +3,11 @@ package mystackoverflow
 class Question extends Intervention
 {
     int views
-    String titleQuestion
-
-    //Many-To-Many relation, One-To-Many relation
-    static hasMany = [ tags: Tag, answer: Answer ]
+    String title
+    static hasMany = [ tags: Tag, answer: Answer ] // Many-To-Many: tag, One-To-Many: answer
 
     static constraints = {
         views min: 0
-        titleQuestion nullable: false, blank: false, maxSize: 200
+        title nullable: false, blank: false, maxSize: 200
     }
 }
