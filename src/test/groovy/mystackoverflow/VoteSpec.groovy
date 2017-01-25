@@ -15,8 +15,10 @@ class VoteSpec extends Specification {
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void "ConstructVote"() {
+        def vote = new Vote()
+
+        expect:
+            vote != null
     }
 }

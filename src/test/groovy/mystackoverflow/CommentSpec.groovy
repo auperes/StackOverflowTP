@@ -15,8 +15,10 @@ class CommentSpec extends Specification {
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void "ConstructComment"() {
+        def com = new Comment()
+
+        expect:
+            com != null
     }
 }

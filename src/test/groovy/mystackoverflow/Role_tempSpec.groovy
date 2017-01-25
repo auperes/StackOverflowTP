@@ -15,8 +15,10 @@ class Role_tempSpec extends Specification {
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void "ConstructRole"() {
+        def role = new Role_temp(authority: "ROLE_TEMP")
+
+        expect:
+            role.getAuthority() == "ROLE_TEMP"
     }
 }
