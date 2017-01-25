@@ -31,6 +31,7 @@
 						My StackOverflow
 					</a>
 				</div>
+
 				<div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
 					<!-- NORMAL NAV BARRE -->
 					<ul class="nav navbar-nav navbar-right">
@@ -81,9 +82,14 @@
 			</div>
 		</div>
 
-		<g:layoutBody/>
+		<!-- LOGO CENTRAL GRAILS -->
+		<div class="svg" role="presentation">
+			<div class="grails-logo-container">
+				<asset:image src="MSOF.png" class="grails-logo"/>
+			</div>
+		</div>
 
-		<div class="footer" role="contentinfo"></div>
+		<g:layoutBody/>
 
 		<div id="spinner" class="spinner" style="display:none;">
 			<g:message code="spinner.alt" default="Loading&hellip;"/>
