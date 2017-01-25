@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'user_temp.label', default: 'User_temp')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
+		<meta name="layout" content="main"/>
+		<title>${message(code: 'site.title')}</title>
+		<asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
     </head>
     <body>
         <a href="#list-user_temp" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>

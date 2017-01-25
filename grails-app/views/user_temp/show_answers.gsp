@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main" />
-		<g:set var="entityName" value="${message(code: 'user_temp.label', default: 'User_temp')}" />
-		<title><g:message code="default.show.label" args="[entityName]" /></title>
+		<meta name="layout" content="main"/>
+		<title>${message(code: 'site.title')}</title>
+		<asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
 	</head>
 
 	<body>
@@ -16,6 +16,7 @@
 						<div class="message" role="status">${flash.message}</div>
 					</g:if>
 
+					<!-- Display the answers of the current user -->
 				   <table>
 						<tr>
 							<td><label>${message(code: 'intervention.date')}</label></td>

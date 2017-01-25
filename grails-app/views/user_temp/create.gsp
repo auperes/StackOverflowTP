@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'user_temp.label', default: 'User_temp')}" />
-        <title><g:message code="default.create.label" args="[entityName]" /></title>
+		<meta name="layout" content="main"/>
+		<title>${message(code: 'site.title')}</title>
+		<asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
     </head>
 
     <body>
@@ -16,6 +16,7 @@
 						<div class="message" role="status">${flash.message}</div>
 					</g:if>
 
+					<!-- Errors -->
 					<g:hasErrors bean="${this.user_temp}">
 						<ul class="errors" role="alert">
 							<g:eachError bean="${this.user_temp}" var="error">
@@ -24,6 +25,7 @@
 						</ul>
 					</g:hasErrors>
 
+					<!-- User creation form -->
 					<g:form action="save">
 						<table id="form">
 							<tr>
@@ -36,6 +38,7 @@
 							</tr>
 						</table>
 
+						<!-- Submit button -->
 						<fieldset class="buttons">
 							<g:submitButton name="auth" class="save" value="${message(code: 'user.signup')}" />
 						</fieldset>

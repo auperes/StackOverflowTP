@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main" />
-		<g:set var="entityName" value="${message(code: 'question.label', default: 'Question')}" />
-		<title><g:message code="default.create.label" args="[entityName]" /></title>
+		<meta name="layout" content="main"/>
+		<title>${message(code: 'site.title')}</title>
+		<asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
 	</head>
 
 	<body>
@@ -24,6 +24,7 @@
 						</ul>
 					</g:hasErrors>
 
+					<!-- Question creation form -->
 					<g:form action="save">
 						<fieldset class="form">
 							<table id="userForm">

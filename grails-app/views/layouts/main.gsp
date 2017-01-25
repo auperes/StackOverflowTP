@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<title>
 			<g:layoutTitle default="Grails"/>
 		</title>
@@ -48,12 +46,12 @@
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${message(code: 'menu.questions')}<span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="${createLink(uri: '/user_temp/show_questions')}/${session.user.id}">Mes questions</a></li>
-									<li><a href="${createLink(uri: '/question/create')}">Poser une question</a></li>
+									<li><a href="${createLink(uri: '/user_temp/show_questions')}/${session.user.id}">${message(code: 'menu.myquestions')}</a></li>
+									<li><a href="${createLink(uri: '/question/create')}">${message(code: 'menu.ask')}</a></li>
 									<li role="separator" class="divider"></li>
-									<li><a href="${createLink(uri: '/question/show_last_questions')}">Dernières questions</a></li>
-									<li><a href="#">Questions populaires</a></li>
-									<li><a href="#">Question par tag</a></li>
+									<li><a href="${createLink(uri: '/question/show_last_questions')}">${message(code: 'menu.lastquestions')}</a></li>
+									<li><a href="#">${message(code: 'menu.bestquestions')}</a></li>
+									<li><a href="#">${message(code: 'menu.questionsbytag')}</a></li>
 								</ul>
 							</li>
 
@@ -61,10 +59,10 @@
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${message(code: 'menu.answers')}<span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="${createLink(uri: '/user_temp/show_answers')}/${session.user.id}">Mes réponses</a></li>
+									<li><a href="${createLink(uri: '/user_temp/show_answers')}/${session.user.id}">${message(code: 'menu.myanswers')}</a></li>
 									<li role="separator" class="divider"></li>
-									<li><a href="#">Dernières réponses</a></li>
-									<li><a href="#">Réponses populaires</a></li>
+									<li><a href="#">${message(code: 'menu.lastanswers')}</a></li>
+									<li><a href="#">${message(code: 'menu.bestanswers')}</a></li>
 								</ul>
 							</li>
 
