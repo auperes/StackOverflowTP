@@ -3,10 +3,10 @@ package mystackoverflow
 class User_temp
 {
 	int nbVotes = 0
-	Role_temp role
 	String username
 	String password
 	Date creation = new Date()
+	Role_temp role = Role_temp.findByAuthority("ROLE_USER")
 	static hasMany = [ answers: Answer, questions: Question, comments: Comment ]	//One-To-Many relation, badges: Many-To-Many relation
 
 	static constraints =
@@ -19,7 +19,6 @@ class User_temp
 	{
 		username = user
 		password = pwd
-		role = Role_temp.findByAuthority("ROLE_USER")
 	}
 
 	String toString()
