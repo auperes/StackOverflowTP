@@ -32,6 +32,7 @@
                 <fieldset class="form">
                     <f:field bean="user_temp" property="username" />
                     <f:field bean="user_temp" property="password" />
+                    <f:field bean="user_temp" property="role" />
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

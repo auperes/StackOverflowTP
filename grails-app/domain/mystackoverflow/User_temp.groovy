@@ -11,8 +11,8 @@ class User_temp
 
 	static constraints =
 	{
-		password nullable: false, blank: false//, size: 5..20
-		username nullable: false, blank: false, unique: true//, size: 5..15, matches:/[a-zA-Z0-9]+/
+		password nullable: false, blank: false, size: 5..20
+		username nullable: false, blank: false, unique: true, size: 5..15, matches:/[a-zA-Z0-9]+/
 	}
 
 	User_temp(String user, String pwd)
