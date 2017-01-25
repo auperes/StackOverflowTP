@@ -17,6 +17,11 @@ class QuestionController {
         respond question
     }
 
+	def show_last_questions()
+	{
+		
+	}
+
     def create() {
         respond new Question(params)
     }

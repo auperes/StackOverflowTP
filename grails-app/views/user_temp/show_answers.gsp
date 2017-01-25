@@ -10,7 +10,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="span">
-					<h1>${message(code: 'user.myquestions')}</h1>
+					<h1>${message(code: 'user.myanswers')}</h1>
 
 					<g:if test="${flash.message}">
 						<div class="message" role="status">${flash.message}</div>
@@ -21,10 +21,10 @@
 							<td><label>${message(code: 'intervention.date')}</label></td>
 							<td><label>${message(code: 'question.title')}</label></td>
 						</tr>
-						<g:each var="question" in="${user_temp.questions}">
+						<g:each var="answer" in="${user_temp.answers}">
 							<tr>
-								<td><label>${question.creationDate}</label></td>
-								<td><a href="${createLink(uri: '/question/show')}/${question.id}">${question.title}</a></td>
+								<td><label>${answer.creationDate}</label></td>
+								<td><a href="${createLink(uri: '/answer/show')}/${answer.id}">${answer.question.title}</a></td>
 							</tr>
 						</g:each>
 					</table>

@@ -21,7 +21,7 @@
 							<td><label>${message(code: 'intervention.date')}</label></td>
 							<td><label>${message(code: 'question.title')}</label></td>
 						</tr>
-						<g:each var="question" in="${user_temp.questions}">
+						<g:each var="question" in="${Question.findAll("from Question order by creationDate", [max: 20])}">
 							<tr>
 								<td><label>${question.creationDate}</label></td>
 								<td><a href="${createLink(uri: '/question/show')}/${question.id}">${question.title}</a></td>

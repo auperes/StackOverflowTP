@@ -42,6 +42,11 @@ class User_tempController {
 		respond user_temp
 	}
 
+	def show_answers(User_temp user_temp)
+	{
+		respond user_temp
+	}
+
 	def show_questions(User_temp user_temp)
 	{
 		respond user_temp

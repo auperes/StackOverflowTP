@@ -51,7 +51,7 @@
 									<li><a href="${createLink(uri: '/user_temp/show_questions')}/${session.user.id}">Mes questions</a></li>
 									<li><a href="${createLink(uri: '/question/create')}">Poser une question</a></li>
 									<li role="separator" class="divider"></li>
-									<li><a href="#">Dernières questions</a></li>
+									<li><a href="${createLink(uri: '/question/show_last_questions')}">Dernières questions</a></li>
 									<li><a href="#">Questions populaires</a></li>
 									<li><a href="#">Question par tag</a></li>
 								</ul>
@@ -61,7 +61,7 @@
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${message(code: 'menu.answers')}<span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="#">Mes réponses</a></li>
+									<li><a href="${createLink(uri: '/user_temp/show_answers')}/${session.user.id}">Mes réponses</a></li>
 									<li role="separator" class="divider"></li>
 									<li><a href="#">Dernières réponses</a></li>
 									<li><a href="#">Réponses populaires</a></li>

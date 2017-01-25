@@ -7,50 +7,54 @@
 	</head>
 
 	<body>
-		<div id="show-user_temp" class="content scaffold-show" role="main">
-			<h1><g:message code="${message(code: 'user.myprofile')}" args="[entityName]" /></h1>
+		<div class="container">
+			<div class="row">
+				<div class="span">
+					<h1>${message(code: 'user.myprofile')}</h1>
 
-			<g:if test="${flash.message}">
-				<div class="message" role="status">${flash.message}</div>
-			</g:if>
+					<g:if test="${flash.message}">
+						<div class="message" role="status">${flash.message}</div>
+					</g:if>
 
-			<table>
-				<tr>
-					<td><label>${message(code: 'user.username')}</label></td>
-					<td><f:display bean="user_temp" property="username" /></td>
-				</tr>
-				<tr>
-					<td><label>${message(code: 'user.role')}</label></td>
-					<td>${user_temp.role}</td>
-				</tr>
-				<tr>
-					<td><label>${message(code: 'user.comments')}</label></td>
-					<td>${user_temp.questions.size()}</td>
-				</tr>
-				<tr>
-					<td><label>${message(code: 'user.answers')}</label></td>
-					<td>${user_temp.questions.size()}</td>
-				</tr>
-				<tr>
-					<td><label>${message(code: 'user.questions')}</label></td>
-					<td>${user_temp.questions.size()}</td>
-				</tr>
-				<tr>
-					<td><label>${message(code: 'user.votes')}</label></td>
-					<td><f:display bean="user_temp" property="nbVotes" /></td>
-				</tr>
-				<tr>
-					<td><label>${message(code: 'user.creationdate')}</label></td>
-					<td><f:display bean="user_temp" property="creation" /></td>
-				</tr>
-			</table>
+					<table>
+						<tr>
+							<td><label>${message(code: 'user.username')}</label></td>
+							<td><f:display bean="user_temp" property="username" /></td>
+						</tr>
+						<tr>
+							<td><label>${message(code: 'user.role')}</label></td>
+							<td>${user_temp.role}</td>
+						</tr>
+						<tr>
+							<td><label>${message(code: 'user.comments')}</label></td>
+							<td>${user_temp.questions.size()}</td>
+						</tr>
+						<tr>
+							<td><label>${message(code: 'user.answers')}</label></td>
+							<td>${user_temp.questions.size()}</td>
+						</tr>
+						<tr>
+							<td><label>${message(code: 'user.questions')}</label></td>
+							<td>${user_temp.questions.size()}</td>
+						</tr>
+						<tr>
+							<td><label>${message(code: 'user.votes')}</label></td>
+							<td><f:display bean="user_temp" property="nbVotes" /></td>
+						</tr>
+						<tr>
+							<td><label>${message(code: 'user.creationdate')}</label></td>
+							<td><f:display bean="user_temp" property="creation" /></td>
+						</tr>
+					</table>
 
-			<g:form resource="${this.user_temp}" method="DELETE">
-				<fieldset class="buttons">
-					<g:link class="edit" action="edit" resource="${this.user_temp}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<input class="delete" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				</fieldset>
-			</g:form>
+					<g:form resource="${this.user_temp}" method="DELETE">
+						<fieldset class="buttons">
+							<g:link class="edit" action="edit" resource="${this.user_temp}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+							<input class="delete" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+						</fieldset>
+					</g:form>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
