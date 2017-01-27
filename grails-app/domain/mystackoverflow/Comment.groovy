@@ -3,7 +3,7 @@ package mystackoverflow
 class Comment
 {
 	String textComment
-	static belongsTo = [ user: User_temp, intervention: Intervention ]		//One-To-Many relation
+	static belongsTo = [ user: User, intervention: Intervention ]		//One-To-Many relation
 
 	static constraints =
 	{

@@ -1,0 +1,95 @@
+/* New style */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+@font-face {
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	background: #34495e;
+}
+
+.gn-menu-main,
+.gn-menu-main ul {
+	margin: 0;
+	padding: 0;
+	color: #5f6f81;
+	list-style: none;
+	font-weight: 300;
+	background: white;
+	line-height: 60px;
+	text-transform: none;
+	font-family: 'Lato', Arial, sans-serif;
+}
+
+.gn-menu-main {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	font-size: 13px;
+}
+
+.gn-menu-main li a {
+	height: 100%;
+	color: #5f6f81;
+	display: block;
+	cursor: pointer;
+	text-decoration: none;
+	transition-duration: 0.5s;
+}
+
+.gn-menu-main > li {
+	float: left;
+	height: 100%;
+	display: block;
+	text-align: center;
+	border-right: 1px solid #c6d0da;
+}
+
+.gn-menu-main > li.last-child {
+	float: right;
+	border-right: none;
+	border-left: 1px solid #c6d0da;
+}
+
+.gn-menu-main > li > a {
+	padding: 0 30px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.gn-menu-main li #home {
+	color: #5f6f81;
+	font-size: 25px;
+	line-height: 60px;
+	vertical-align: center;
+}
+
+.gn-menu-main li a:hover {
+	color: #ffffff;
+	background-color: #5f6f81;
+	transition-duration: 0.5s;
+}
+
+.gn-menu-main li a#deconnexion:hover {
+	background-color: #c30707;
+}
+
+.gn-menu-main li #home {
+	background-size: 36px 36px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url("MSOF-logo-grey.png");
+}
+
+.gn-menu-main li #home:hover {
+	background-image: url("MSOF-logo-white.png");
+}

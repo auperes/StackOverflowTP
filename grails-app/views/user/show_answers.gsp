@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html ondragstart='event.preventDefault();'>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>${message(code: 'site.title')}</title>
+		<title>${message(code: 'site.name')}</title>
 		<asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
 	</head>
 
@@ -10,22 +10,22 @@
 		<div class="container">
 			<div class="row">
 				<div class="span">
-					<h1>${message(code: 'user.myquestions')}</h1>
+					<h1>${message(code: 'user.myanswers')}</h1>
 
 					<g:if test="${flash.message}">
 						<div class="message" role="status">${flash.message}</div>
 					</g:if>
 
-					<!-- Display the last questions of the site -->
+					<!-- Display the answers of the current user -->
 				   <table>
 						<tr>
 							<td><label>${message(code: 'intervention.date')}</label></td>
 							<td><label>${message(code: 'question.title')}</label></td>
 						</tr>
-						<g:each var="question" in="${Question.findAll("from Question order by creationDate", [max: 20])}">
+						<g:each var="answer" in="${user.answers}">
 							<tr>
-								<td><label>${question.creationDate}</label></td>
-								<td><a href="${createLink(uri: '/question/show')}/${question.id}">${question.title}</a></td>
+								<td><label>${answer.creationDate}</label></td>
+								<td><a href="${createLink(uri: '/answer/show')}/${answer.id}">${answer.question.title}</a></td>
 							</tr>
 						</g:each>
 					</table>

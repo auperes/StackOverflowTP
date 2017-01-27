@@ -1,12 +1,13 @@
 package mystackoverflow
 
-class User_temp
+class User
 {
-	int nbVotes = 0
+	String lastname
+	String firstname
 	String username
 	String password
-	Date creation = new Date()
-	Role_temp role// = Role_temp.findByAuthority("ROLE_USER")
+	Role role = Role.USER
+	Date registration = new Date()
 	static hasMany = [ answers: Answer, questions: Question, comments: Comment ]	//One-To-Many relation, badges: Many-To-Many relation
 
 	static constraints =

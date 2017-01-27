@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html ondragstart='event.preventDefault();'>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>${message(code: 'site.title')}</title>
+		<title>${message(code: 'site.name')}</title>
 		<asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
 	</head>
 
@@ -10,7 +10,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="span">
-					<h1>${message(code: 'user.myprofile')}</h1>
+					<h1>${message(code: 'user.profile')}</h1>
 
 					<g:if test="${flash.message}">
 						<div class="message" role="status">${flash.message}</div>
@@ -19,32 +19,32 @@
 					<!-- Display the information of the current user -->
 					<table>
 						<tr>
-							<td><label>${message(code: 'user.username')}</label></td>
-							<td><f:display bean="user_temp" property="username" /></td>
+							<td><label>${message(code: 'user.lastname')}</label></td>
+							<td>${user.lastname}</td>
+						</tr>
+						<tr>
+							<td><label>${message(code: 'user.firstname')}</label></td>
+							<td>${user.firstname}</td>
 						</tr>
 						<tr>
 							<td><label>${message(code: 'user.role')}</label></td>
-							<td>${user_temp.role}</td>
+							<td>${user.role}</td>
 						</tr>
 						<tr>
 							<td><label>${message(code: 'user.comments')}</label></td>
-							<td>${user_temp.questions.size()}</td>
+							<td>${user.comments.size()}</td>
 						</tr>
 						<tr>
 							<td><label>${message(code: 'user.answers')}</label></td>
-							<td>${user_temp.questions.size()}</td>
+							<td>${user.answers.size()}</td>
 						</tr>
 						<tr>
 							<td><label>${message(code: 'user.questions')}</label></td>
-							<td>${user_temp.questions.size()}</td>
-						</tr>
-						<tr>
-							<td><label>${message(code: 'user.votes')}</label></td>
-							<td><f:display bean="user_temp" property="nbVotes" /></td>
+							<td>${user.questions.size()}</td>
 						</tr>
 						<tr>
 							<td><label>${message(code: 'user.creationdate')}</label></td>
-							<td><f:display bean="user_temp" property="creation" /></td>
+							<td>${user.registration}</td>
 						</tr>
 					</table>
 				</div>

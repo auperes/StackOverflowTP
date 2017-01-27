@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html ondragstart='event.preventDefault();'>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>${message(code: 'site.title')}</title>
+		<title>${message(code: 'site.name')}</title>
 		<asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
 	</head>
 
@@ -10,7 +10,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="span">
-					<h1>${message(code: 'login.authentication')}</h1>
+					<h1>${message(code: 'user.authentication')}</h1>
 
 					<form method='post' action='login'>
 						<table id="loginForm">
@@ -25,7 +25,7 @@
 						</table>
 
 						<fieldset class="buttons">
-							<g:submitButton name="auth" value="${message(code: 'login.login')}"/>
+							<g:submitButton name="auth" value="${message(code: 'user.login')}"/>
 						</fieldset>
 					</form>
 				</div>

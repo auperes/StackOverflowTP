@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html ondragstart='event.preventDefault();'>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>${message(code: 'site.title')}</title>
+		<title>${message(code: 'site.name')}</title>
 		<asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
 	</head>
 
@@ -22,7 +22,7 @@
 							<td><label>${message(code: 'intervention.date')}</label></td>
 							<td><label>${message(code: 'question.title')}</label></td>
 						</tr>
-						<g:each var="question" in="${user_temp.questions}">
+						<g:each var="question" in="${user.questions}">
 							<tr>
 								<td><label>${question.creationDate}</label></td>
 								<td><a href="${createLink(uri: '/question/show')}/${question.id}">${question.title}</a></td>

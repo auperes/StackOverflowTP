@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html ondragstart='event.preventDefault();'>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>${message(code: 'site.title')}</title>
+		<title>${message(code: 'site.name')}</title>
 		<asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
 	</head>
 
@@ -37,13 +37,13 @@
 									<td><g:field maxlength="500" name="text" value="${params.text}"/></td>
 								</tr>
 
-								<g:hiddenField name="views" value="0" />
-								<g:hiddenField name="user.id" value="${session.user.id}" />
+								<g:hiddenField name="views" value="0"/>
+								<g:hiddenField name="user.id" value="${session.user.id}"/>
 							</table>
 						</fieldset>
 
 						<fieldset class="buttons">
-							<g:submitButton name="create" value="${message(code: 'question.ask')}" />
+							<g:submitButton name="create" value="${message(code: 'question.ask')}"/>
 						</fieldset>
 					</g:form>
 				</div>

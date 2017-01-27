@@ -2,8 +2,8 @@ package mystackoverflow
 
 class Answer extends Intervention
 {
-    static belongsTo = [ question: Question ]
+	static belongsTo = [ question: Question ]
 
-    static constraints = {
-    }
+	static constraints = {
+	}
 }
