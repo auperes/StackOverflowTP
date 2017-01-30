@@ -4,9 +4,17 @@ import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
-class UserController {
-
+class UserController
+{
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+
+    def defaultPage() {
+		if (session.user != null)
+			respond User.findByUsername(session.user.username)
+
+		else
+			redirect(uri:'/')
+    }
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -19,13 +27,10 @@ class UserController {
 		{
 			def user = User.findByUsername(params.username)
 
-			if (user != null)
+			if (user != null && user.password == params.password)
 			{
-				if (user.password == params.password)
-				{
-					session.user = user
-					redirect(uri:'/')
-				}
+				session.user = user
+				redirect(uri:'/')
 			}
 		}
 		[login: false, message: 'Login ou mot de passe incorrect']
@@ -38,16 +43,6 @@ class UserController {
 	}
 
 	def show(User user)
-	{
-		respond user
-	}
-
-	def show_answers(User user)
-	{
-		respond user
-	}
-
-	def show_questions(User user)
 	{
 		respond user
 	}
