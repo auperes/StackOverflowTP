@@ -7,9 +7,10 @@ import grails.transaction.Transactional
 class QuestionController
 {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-
-    def defaultPage() {
-        respond new Question(params)
+ 
+    def defaultPage(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        respond Question.list(params), model:[questionCount: Question.count()]
     }
 
     def index(Integer max) {

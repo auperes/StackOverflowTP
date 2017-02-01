@@ -13,7 +13,6 @@
 				<li><a data-tab='#tab1' class='navbar-item navbar-item-selected'><span id='tab1-name'>${message(code: 'user.myprofile').toUpperCase()}</span></a></li>
 				<li><a data-tab='#tab2' class='navbar-item'><span id='tab2-name'>${message(code: 'user.myquestions').toUpperCase()}</span></a></li>
 				<li><a data-tab='#tab3' class='navbar-item'><span id='tab3-name'>${message(code: 'user.myanswers').toUpperCase()}</span></a></li>
-				<li><a data-tab='#tab4' class='navbar-item'><span id='tab2-name'>EDITER</span></a></li>
 			</ul>
 		</div>
 
@@ -81,7 +80,7 @@
 								<!-- Display the questions of the current user -->
 							   <table>
 									<tr>
-										<td><label>${message(code: 'intervention.date')}</label></td>
+										<td><label>${message(code: 'question.creationDate')}</label></td>
 										<td><label>${message(code: 'question.title')}</label></td>
 									</tr>
 									<g:each var="question" in="${user.questions}">
@@ -110,8 +109,8 @@
 								<!-- Display the answers of the current user -->
 							   <table>
 									<tr>
-										<td><label>${message(code: 'intervention.date')}</label></td>
-										<td><label>${message(code: 'question.title')}</label></td>
+										<td><label>${message(code: 'answer.creationDate')}</label></td>
+										<td><label>${message(code: 'answer.title')}</label></td>
 									</tr>
 									<g:each var="answer" in="${user.answers}">
 										<tr>
@@ -123,11 +122,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-
-				<!-- tab 4 -->
-				<div id='tab4' class='page hidden'>
-					
 				</div>
 			</div>
 		</div>

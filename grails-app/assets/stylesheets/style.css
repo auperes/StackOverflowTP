@@ -3,6 +3,15 @@ body {
 	background: #34495e;
 }
 
+h1, td
+{
+	color: white;
+}
+
+input {
+	color: black;
+}
+
 /* MAIN MENU */
 .gn-menu-main,
 .gn-menu-main ul {
@@ -135,9 +144,9 @@ body {
 	-webkit-user-select: none;
 }
 .navbar-item {
-	color: white;
 	outline: none;
 	display: block;
+	color: #5f6f81;
 	cursor: pointer;
 	font-size: 105%;
 	text-align: end;
@@ -147,12 +156,11 @@ ul#navbar li a {
 	width: 240px;
 	height: 60px;
 	display: block;
-	line-height: 60px;
-	vertical-align: center;
-	color: #5f6f81;
 	margin-right: 0;
 	text-align: right;
+	line-height: 60px;
 	text-decoration: none;
+	vertical-align: center;
 	border-bottom: solid 1px #c6d0da;
 	font-family: 'Lato', Arial, sans-serif;
 }
