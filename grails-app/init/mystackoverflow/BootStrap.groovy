@@ -29,6 +29,11 @@ class BootStrap {
 		assert User.count() == 1
 		assert Role.count() == 2
 		assert UserRole.count() == 1
+
+		Feature.AddToMap("Login", true)
+		Feature.AddToMap("SignUp", true)
+		Feature.AddToMap("QuestionCreation", true)
+		Feature.AddToMap("AnswerCreation", false)
 	}
 
 	def destroy = {
