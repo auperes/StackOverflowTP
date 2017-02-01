@@ -1,12 +1,21 @@
 package mystackoverflow
 
-enum Role
-{
-	ADMIN(0), USER(1)
+import groovy.transform.EqualsAndHashCode
+import groovy.transform.ToString
 
-	int authority
+@EqualsAndHashCode(includes='authority')
+@ToString(includes='authority', includeNames=true, includePackage=false)
+class Role implements Serializable {
 
-	Role(int value) {
-		this.authority = value
+	private static final long serialVersionUID = 1
+
+	String authority
+
+	static constraints = {
+		authority blank: false, unique: true
+	}
+
+	static mapping = {
+		cache true
 	}
 }

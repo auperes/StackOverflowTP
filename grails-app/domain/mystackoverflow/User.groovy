@@ -1,23 +1,49 @@
 package mystackoverflow
 
-class User
-{
-	String lastname
-	String firstname
+import groovy.transform.EqualsAndHashCode
+import groovy.transform.ToString
+
+@EqualsAndHashCode(includes='username')
+@ToString(includes='username', includeNames=true, includePackage=false)
+class User implements Serializable {
+
+	private static final long serialVersionUID = 1
+
+	transient springSecurityService
+
 	String username
 	String password
-	Role role = Role.USER
-	Date registration = new Date()
-	static hasMany = [ answers: Answer, questions: Question, comments: Comment ]	//One-To-Many relation, badges: Many-To-Many relation
+	boolean enabled = true
+	boolean accountExpired
+	boolean accountLocked
+	boolean passwordExpired
 
-	static constraints =
-	{
-		password nullable: false, blank: false, size: 5..20
-		username nullable: false, blank: false, unique: true, size: 5..15, matches:/[a-zA-Z0-9]+/
+	Set<Role> getAuthorities() {
+		UserRole.findAllByUser(this)*.role
 	}
 
-	String toString()
-	{
-		return username;
+	def beforeInsert() {
+		encodePassword()
+	}
+
+	def beforeUpdate() {
+		if (isDirty('password')) {
+			encodePassword()
+		}
+	}
+
+	protected void encodePassword() {
+		password = springSecurityService?.passwordEncoder ? springSecurityService.encodePassword(password) : password
+	}
+
+	static transients = ['springSecurityService']
+
+	static constraints = {
+		password blank: false, password: true
+		username blank: false, unique: true
+	}
+
+	static mapping = {
+		password column: '`password`'
 	}
 }

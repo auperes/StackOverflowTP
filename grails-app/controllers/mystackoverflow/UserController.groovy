@@ -1,51 +1,24 @@
 package mystackoverflow
 
+import grails.plugin.springsecurity.annotation.Secured
+
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
-class UserController
-{
+@Secured(['ROLE_USER', 'ROLE_ADMIN'])
+class UserController {
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-
-    def defaultPage() {
-		if (session.user != null)
-			respond User.findByUsername(session.user.username)
-
-		else
-			redirect(uri:'/')
-    }
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond User.list(params), model:[userCount: User.count()]
     }
 
-	def login()
-	{
-		if (params.username != null)
-		{
-			def user = User.findByUsername(params.username)
-
-			if (user != null && user.password == params.password)
-			{
-				session.user = user
-				redirect(uri:'/')
-			}
-		}
-		[login: false, message: 'Login ou mot de passe incorrect']
-	}
-
-	def logout()
-	{
-		session.user = null
-		redirect(uri:'/')
-	}
-
-	def show(User user)
-	{
-		respond user
-	}
+    def show(User user) {
+        respond user
+    }
 
     def create() {
         respond new User(params)
