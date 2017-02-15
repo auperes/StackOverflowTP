@@ -18,15 +18,17 @@
 			<li><a href="${createLink(uri: '/question/defaultPage')}">${message(code: 'menu.questions')}</a></li>
 			<li><a href="${createLink(uri: '/answer/defaultPage')}">${message(code: 'menu.answers')}</a></li>
 
-			<g:if test="${session.user}">
+			<g:if test="${logged}">
 				<li class="last-child"><a href="${createLink(uri: '/user/logout')}" id="deconnexion">${message(code: 'menu.logout')}</a></li>
 				<li class="last-child"><a href="${createLink(uri: '/user/defaultPage')}">${message(code: 'menu.profile')}</a></li>
 			</g:if>
 
-			<g:else>
+			<g:if test="${!logged && signup_activated}">
 				<li class="last-child"><a href="${createLink(uri: '/user/create')}">${message(code: 'menu.signup')}</a></li>
+			</g:if>
+			<g:if test="${!logged}">
 				<li class="last-child"><a href="${createLink(uri: '/user/login')}">${message(code: 'menu.login')}</a></li>
-			</g:else>
+			</g:if>
 		</ul>
 		<g:layoutBody/>
 	</body>

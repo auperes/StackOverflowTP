@@ -1,5 +1,7 @@
 package mystackoverflow
 
+import groovy.json.JsonSlurper
+
 class BootStrap {
 
 	def init = { servletContext ->
@@ -30,10 +32,20 @@ class BootStrap {
 		assert Role.count() == 2
 		assert UserRole.count() == 1
 
-		Feature.AddToMap("Login", true)
-		Feature.AddToMap("SignUp", true)
-		Feature.AddToMap("QuestionCreation", true)
-		Feature.AddToMap("AnswerCreation", false)
+		// Read the file config.json in grails-app/conf
+		def resource = this.class.classLoader.getResource('config.json')
+		def configsFile = new File(resource.file)
+
+		// Set the configuration
+		def configsArray = new JsonSlurper().parseText(configsFile.text)
+		configsArray.each{ key, value ->
+		    Feature.setActivated(key, value)
+		}
+
+		// Check the loaded values
+		println Feature.isActivated('SignUp')
+		println Feature.isActivated('QuestionCreation')
+		println Feature.isActivated('AnswerCreation')
 	}
 
 	def destroy = {

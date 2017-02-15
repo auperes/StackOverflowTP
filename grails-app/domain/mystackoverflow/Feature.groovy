@@ -19,9 +19,14 @@ class Feature {
         return feature
     }
 
-    public static void AddToMap(String s, Boolean b)
+    public static void setActivated(String featureName, Boolean activated)
     {
-        getInstance().getFeat().put(s,b)
+        getInstance().getFeat().put(featureName, activated)
+    }
+
+    public static Boolean isActivated(String featureName)
+    {
+        return getInstance().getFeat().get(featureName)
     }
 
     static constraints = {
