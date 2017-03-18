@@ -1,5 +1,6 @@
 package mystackoverflow
 
+
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 
@@ -15,10 +16,8 @@ class CommentSpec extends Specification {
     def cleanup() {
     }
 
-    void "ConstructComment"() {
-        def com = new Comment()
-
-        expect:
-            com != null
+    void "test something"() {
+        expect:"fix me"
+            true == false
     }
 }

@@ -1,5 +1,9 @@
 package mystackoverflow
 
+
+import grails.rest.*
+
+@Resource(readOnly = false, formats = ['json', 'xml'])
 class Comment
 {
 	String textComment
@@ -9,4 +13,5 @@ class Comment
 	{
 		textComment nullable: false, blank: false, maxSize: 1000
 	}
+
 }

@@ -4,9 +4,9 @@ package mystackoverflow
 import grails.rest.*
 import grails.converters.*
 
-class AnswerController extends RestfulController {
+class InterventionController extends RestfulController {
     static responseFormats = ['json', 'xml']
-    AnswerController() {
-        super(Answer)
+    InterventionController() {
+        super(Intervention)
     }
 }

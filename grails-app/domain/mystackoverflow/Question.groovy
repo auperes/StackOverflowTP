@@ -1,10 +1,14 @@
 package mystackoverflow
 
+
+import grails.rest.*
+
+@Resource(readOnly = false, formats = ['json', 'xml'])
 class Question extends Intervention
 {
 	int views = 0
 	String title
-	static hasMany = [ /*tags: Tag,*/ answers: Answer ] // Many-To-Many: tag, One-To-Many: answer
+	static hasMany = [ answers: Answer ] // One-To-Many: answer
 
 	static constraints = {
 		views min: 0
