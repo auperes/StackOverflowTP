@@ -1,0 +1,7 @@
+import mystackoverflow.Question
+
+model {
+	Question question
+}
+
+json tmpl.question(question)

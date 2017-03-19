@@ -1,0 +1,13 @@
+import mystackoverflow.Question
+
+model {
+	Question question
+}
+
+//json g.render(question)
+
+json {
+	hal.links(question)
+	id question.id
+	title question.title
+}

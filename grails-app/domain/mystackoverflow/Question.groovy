@@ -3,20 +3,17 @@ package mystackoverflow
 
 import grails.rest.*
 
-@Resource(readOnly = false, formats = ['json', 'xml'])
-class Question extends Intervention
-{
-	int views = 0
-	String title
-	static hasMany = [ answers: Answer ] // One-To-Many: answer
+//@Resource(readOnly = false, formats = ['json', 'xml'])
+class Question extends Intervention {
 
-	static constraints = {
-		views min: 0
-		title nullable: false, blank: false, maxSize: 200
-	}
+    String title
+    int views = 0
 
-	String toString()
-	{
-		return title;
-	}
+    static hasMany = [answers: Answer]
+
+    static constraints = {
+        views min: 0
+        title nullable: false, blank: false, maxSize: 200
+    }
+
 }

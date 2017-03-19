@@ -1,0 +1,15 @@
+<table>
+    <tbody>
+    <tr ng-repeat="t in vm.questions">
+        <td>
+            {{t.title}}
+        </td>
+        <td>
+            {{t.user}}
+        </td>
+        <td>
+            <button type="button" ng-click="vm.delete(t)">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>

@@ -1,11 +1,7 @@
 package mystackoverflow
 
+class Feature {
 
-import grails.rest.*
-
-@Resource(readOnly = false, formats = ['json', 'xml'])
-class Feature
-{
     private static Feature feature
     Map<String, Boolean> feat = new HashMap<String, Boolean>()
 
@@ -25,7 +21,7 @@ class Feature
 
     public static void setActivated(String featureName, Boolean activated)
     {
-        getInstance().getFeat().put(featureName, activated)
+        getInstance().getFeat().put(featureName,activated)
     }
 
     public static Boolean isActivated(String featureName)

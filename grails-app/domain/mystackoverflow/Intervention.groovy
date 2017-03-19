@@ -1,18 +1,13 @@
 package mystackoverflow
 
+class Intervention {
 
-import grails.rest.*
+    String text
+    Date creationDate = new Date()
+    static belongsTo = [user: User]
+    static hasMany = [comments: Comment]
 
-@Resource(readOnly = false, formats = ['json', 'xml'])
-class Intervention
-{
-	String text
-	Date creationDate = new Date()
-	static belongsTo = [ user: User ] // One-To-Many
-	static hasMany = [ comments: Comment ] // One-To-Many relation
-
-	static constraints =
-	{
-		text nullable: false, blank: false, maxSize: 1000
-	}
+    static constraints = {
+        text nullable: false, blank: false, maxSize: 1000
+    }
 }

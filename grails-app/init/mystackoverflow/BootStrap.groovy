@@ -1,61 +1,16 @@
 package mystackoverflow
 
-import groovy.json.JsonSlurper
-
 class BootStrap {
 
     def init = { servletContext ->
-		//User user = new User(lastname: 'Pinson', firstname: 'Corentin', username: 'corentin', password: 'password').save()
-		//User admin = new User(lastname: 'Peres', firstname: 'Aurélie', username: 'aurelie', password: 'password', role: Role.ADMIN).save()
 
-		//Question question1 = new Question(title: 'Comment protéger les lapons de laponie?', text: 'J\'avais besoin d\'une question et rien d\'autre ne m\'est venu à l\'esprit.', user: admin).save()
-		//Question question2 = new Question(title: 'Combien de bras ont les manchots d\'antarctique?', text: 'Parce qu\'il me fallait une autre question.', user: user).save()
+        Role admin = new Role("ROLE_ADMIN").save()
+        User user = new User("user", "pass").save()
+        UserRole.create(user, admin, true)
 
-		//println Role.findAll()
-		//println User.findAll()
-		//println Question.findAll()
+        5.times { new Question(title: "Question ${it+1}", views: 0, text: "Content of the question ${it+1}", user: user).save() }
 
-		// spring security
-		/*def adminRole = new Role(authority: 'ROLE_ADMIN').save()
-		def userRole = new Role(authority: 'ROLE_USER').save()
-
-		def testUser = new User(username: 'me', password: 'password').save()
-
-		UserRole.create testUser, adminRole
-
-		UserRole.withSession {
-			it.flush()
-			it.clear()
-		}
-
-		assert User.count() == 1
-		assert Role.count() == 2
-		assert UserRole.count() == 1*/
-
-		// Read the file config.json in grails-app/conf
-		try
-		{
-			def resource = this.class.classLoader.getResource('config.json')
-			def configsFile = new File(resource.file)
-
-			// Set the configuration
-			def configsArray = new JsonSlurper().parseText(configsFile.text)
-			configsArray.each { key, value ->
-			    Feature.setActivated(key, value)
-			}
-		}
-		catch (Exception e)
-		{
-			println e
-		}
-
-		// Check the loaded values
-		println 'SignUp: ' + Feature.isActivated('SignUp')
-		println 'QuestionCreation: ' + Feature.isActivated('QuestionCreation')
-		println 'AnswerCreation: ' + Feature.isActivated('AnswerCreation')
     }
-
     def destroy = {
-
     }
 }

@@ -1,17 +1,12 @@
 package mystackoverflow
 
+class Comment {
 
-import grails.rest.*
+    String textComment
 
-@Resource(readOnly = false, formats = ['json', 'xml'])
-class Comment
-{
-	String textComment
-	static belongsTo = [ user: User, intervention: Intervention ]		//One-To-Many relation
+    static belongsTo = [user: User, intervention: Intervention]
 
-	static constraints =
-	{
-		textComment nullable: false, blank: false, maxSize: 1000
-	}
-
+    static constraints = {
+        textComment nullable: false, blank: false, maxSize: 1000
+    }
 }

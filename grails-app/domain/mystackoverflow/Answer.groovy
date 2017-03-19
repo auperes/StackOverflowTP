@@ -1,13 +1,9 @@
 package mystackoverflow
 
+class Answer extends Intervention {
 
-import grails.rest.*
+    static belongsTo = [question: Question]
 
-@Resource(readOnly = false, formats = ['json', 'xml'])
-class Answer
-{
-	static belongsTo = [ question: Question ]
-
-	static constraints = {
-	}
+    static constraints = {
+    }
 }
